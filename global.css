@@ -196,4 +196,26 @@ body {
     color: #888;
     font-size: 24px;
     padding: 10px 15px;
-    text-decoration
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-item:hover {
+    color: #4A90E2;
+}
+
+.nav-item.active {
+    color: #4A90E2;
+    /* Simulate the grey hatched background from the sketch for the active user icon */
+    background-image: linear-gradient(45deg, #f0f0f0 25%, transparent 25%, transparent 50%, #f0f0f0 50%, #f0f0f0 75%, transparent 75%, transparent);
+    background-size: 10px 10px;
+    border-radius: 8px; /* Match the sketch's implied shape */
+}
+
+/* Responsive adjustments (basic) */
+@media (max-width: 400px) {
+    .container {
+        border-radius: 0; /* No rounded corners on very small screens */
+        box-shadow: none;
+    }
+}
