@@ -11,7 +11,7 @@ body {
 body {
     margin: o;
     background-color: lightseagreen;
-    font-family: fantasy;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
   
   p {
@@ -23,9 +23,9 @@ body {
  h2 {
     color:#5e0808;
 }
+li {
 
-
-   
+   color:darkgreen;
 
 }
 
