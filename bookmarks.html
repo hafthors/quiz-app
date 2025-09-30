@@ -1,85 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Quiz App - Harry Potter</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Quiz Layout</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <div class="app">
-    <header>
-      <h1>Quiz App - Harry Potter</h1>
- <header class="header">
-        <h1>Harry Potter Quiz</h1>
-    </header>
+    <div class="quiz-app-container">
+        <h1>Harry Potter Quiz Questions</h1>
 
-   
-    <main id="quiz-container" class="quiz-container">
+        <div class="quiz-list">
+            <div class="quiz-card bookmarked">
+                <div class="question-header">
+                    <span class="question-text">
+                        What is the name of the school that Harry Potter attends?
+                    </span>
+                    <i class="fa-solid fa-bookmark bookmark-icon"></i>
+                </div>
+                <div class="answer-section">
+                    <span class="answer-label">Answer:</span>
+                    <span class="answer-text">Hogwarts School of Witchcraft and Wizardry</span>
+                </div>
+                <div class="tags-section">
+                    <span class="tag">Harry Potter</span>
+                    <span class="tag">Hogwarts</span>
+                    <span class="tag">Fiction</span>
+                </div>
+            </div>
 
-    </main>
-
-    <!-- Fixed Bottom Navigation (Footer) -->
-    <footer id="footer">
-        <nav class="footer-nav">
-            <a href="#" class="nav-link">
-                <i data-lucide="home" class="nav-icon active"></i>
-            </a>
-            <a href="#" class="nav-link">
-                <i data-lucide="bookmark" class="nav-icon"></i>
-            </a>
-            <a href="#" class="nav-link">
-                <i data-lucide="user" class="nav-icon"></i>
-            </a>
-        </nav>
-    </footer>
-
-
-        // Sample Quiz Data
-        const quizData = [
-            {
-                question: "What is the name of the school that Harry Potter attends?",
-                answer: "Hogwarts School of Witchcraft and Wizardry",
-                tags: [Harry Potter, Hogwarts, Fiction],
-                bookmarked: false
-            },
-          {
-                question: "Who is Harry Potter's best friend throughout the series?",
-                answer: Ron Weasley
-                tags: [Harry Potter, Symbolism, Scar],
-                bookmarked: false
-            },
-
-            {
-                question: " What is the name of the lightning bolt-shaped scar on Harry Potter's forehead?",
-                answer: "The Dark Mark",
-                tags: ["Harry Potter, Symbolism, Scar"],
-                bookmarked: false
-            },
-
-            {
-                question: " Which magical creature guards the entrance to the Gryffindor common room?",
-                answer: " The Fat Lady (portrait).",
-                tags: [" Harry Potter, Creatures, Gryffindor"],
-                bookmarked: false
-            },
-
-          
-            {
-                question: "What is the name of the game played on flying broomsticks in the wizarding world?,
-                answer: "Quidditch.",
-                tags: ["Harry Potter, Sports, Magic"],
-                bookmarked: true
-            },
-            {
-                question: "What is the name of the three-headed dog that guards the Sorcerer's Stone?",
-                answer: "Fluffy",
-                tags: ["Harry Potter, Creatures, Sorcerer's Stone"],
-                bookmarked: false
-            }
-        
-    </body>
-      </html>
-    
-     
-         
+            <div class="quiz-card">
+                <div class="question-header">
+                    <span class="question-text">
+                        Who is Harry Potter's best friend throughout the series?
+                    </span>
+                    <i class="fa-regular fa-bookmark bookmark-icon"></i>
+                </div>
+                <div class="answer-section">
+                    <span class="answer-label">Answer:</span>
+                    <span class="answer-text">Ron Weasley</span>
+                </div>
+                <div class="tags-section">
+                    <span class="tag">Harry Potter</span>
+                    <span class="tag">Symbolism</span>
+                    <span class="tag">Scar</span>
+                </div>
+            </div>
+            
+            </div>
+    </div>
+</body>
+</html>
