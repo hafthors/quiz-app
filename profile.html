@@ -3,58 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz App Profile</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Marvel Universe Quiz</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <div class="container">
-        <header class="header">
-            <h1>Quiz App</h1>
-        </header>
+<body class="app app--profile">
+    <header class="app-header">
+        <img src="./assets/Marvel_Logo.png" alt="Marvel Logo" class="app-header__logo">
+        <h1 class="app-header__title">Universe Quiz</h1>
+    </header>
 
-        <main class="profile-section">
-            <div class="user-info">
-                <div class="avatar">
-                    <i class="fas fa-user"></i>
-                </div>
-                <div class="user-name">Max Doe</div>
-            </div>
+    <main class="app-main__profile">
+        <section class="">
+            <article class="">
+                
+            </article>
+        </section>
+    </main>
+    <footer>
+        <nav class="app-nav">
+             <a class="app-nav__link app-nav__link--active" href="index.html" aria-current="page">
+                <img src="./assets/icons/Home.svg" alt="Home" class="app-nav__icon">
+            </a>
+            <a class="app-nav__link" href="bookmarks.html">
+                <img src="./assets/icons/Bookmark.svg" alt="Bookmarks" class="app-nav__icon">
+            </a>
+            <a class="app-nav__link" href="profile.html">
+                <img src="./assets/icons/user.svg" alt="Profile" class="app-nav__icon">
+            </a>
+        </nav>
 
-            <div class="about-me">
-                <h2>About me</h2>
-                <div class="text-placeholder line-1"></div>
-                <div class="text-placeholder line-2"></div>
-                <div class="text-placeholder line-3"></div>
-            </div>
+    </footer>
 
-            <div class="stats-cards">
-                <div class="stat-card">
-                    <i class="fas fa-question-circle"></i>
-                    <span>12</span>
-                </div>
-                <div class="stat-card">
-                    <i class="fas fa-bookmark"></i>
-                    <span>4</span>
-                </div>
-            </div>
-
-            <div class="settings-section">
-                <h2>Settings</h2>
-                <div class="setting-item">
-                    <span>Dark Mode</span>
-                    <div class="toggle-switch">
-                        <div class="toggle-circle"></div>
-                    </div>
-                </div>
-            </div>
-        </main>
-
-        <footer class="navbar">
-            <a href="#" class="nav-item"><i class="fas fa-home"></i></a>
-            <a href="#" class="nav-item"><i class="fas fa-bookmark"></i></a>
-            <a href="#" class="nav-item active"><i class="fas fa-user-circle"></i></a>
-        </footer>
-    </div>
 </body>
 </html>
