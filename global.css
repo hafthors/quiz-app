@@ -9,36 +9,23 @@ body {
 }
 
 body {
-  margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
-  color: #151515;
+    margin: o;
+    background-color: lightseagreen;
+    font-family: fantasy;
+}
+  
+  p {
+    color: darkblue;
+  h1 {
+    color:lightgreen;
+}
+ h2 {
+    color:lightgreen;
 }
 
-.app--home {
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.6),
-      rgba(255, 255, 255, 0.6)
-    ),
-    url("./assets/Background/superhero-collage-fvoxfxdq1dqv9e40.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
 
-.app--bookmarks {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("./assets/Background/marvel-ipad-oxalwk0fh7s1xwog.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+   
 
-.app--profile {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("./assets/Background/queen-of-the-autumn-forest-knak0cxjk2hi1hh1.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .app {
