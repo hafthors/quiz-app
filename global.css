@@ -1,106 +1,73 @@
 
+* {
+  box-sizing: border-box;
+}
+
+html,
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f7f9;
-    margin: 0;
-    padding: 20px;
-    display: flex; /* Main body uses flex to center content */
-    justify-content: center;
+  height: 100%;
 }
 
-.quiz-app-container {
-    width: 100%;
-    max-width: 700px;
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+  color: #151515;
 }
 
-h1 {
-    color: #2c3e50;
-    text-align: center;
-    margin-bottom: 30px;
+.app--home {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.6)
+    ),
+    url("./assets/Background/superhero-collage-fvoxfxdq1dqv9e40.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-/* Flex Container for the List */
-.quiz-list {
-    display: flex;
-    flex-direction: column; /* Stack cards vertically */
-    gap: 20px;
+.app--bookmarks {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("./assets/Background/marvel-ipad-oxalwk0fh7s1xwog.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-/* Quiz Card Styling */
-.quiz-card {
-    background: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+.app--profile {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("./assets/Background/queen-of-the-autumn-forest-knak0cxjk2hi1hh1.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-/* Question Header (Flexbox for Question Text and Icon) */
-.question-header {
-    display: flex;
-    justify-content: space-between; /* Puts icon on the far right */
-    align-items: flex-start; /* Aligns items at the top */
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #f0f0f0;
+.app {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
-.question-text {
-    flex-grow: 1; /* Allows text to take up most space */
-    font-size: 1.1em;
-    font-weight: bold;
-    color: #34495e;
-    line-height: 1.4;
-    padding-right: 15px; /* Spacing before the icon */
+.app-main {
+  overflow: auto;
+  padding: 1rem 1rem 4.5rem;
 }
 
-.bookmark-icon {
-    font-size: 1.3em;
-    color: #95a5a6; /* Default gray for unbookmarked */
-    cursor: pointer;
-}
-
-/* Style for bookmarked card */
-.quiz-card.bookmarked .bookmark-icon {
-    color: #f39c12; /* Orange for bookmarked */
-    /* Use solid icon for bookmarked state */
-    font-weight: 900; 
-}
-
-
-/* Answer Section (Flexbox for Label and Text) */
-.answer-section {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 15px;
-}
-
-.answer-label {
-    font-weight: 600;
-    color: #2980b9; /* Blue label */
-    margin-right: 8px;
-    flex-shrink: 0; /* Prevents label from shrinking */
-}
-
-.answer-text {
-    color: #7f8c8d;
-    font-style: italic;
-    line-height: 1.4;
-}
-
-/* Tags Section (Flexbox for Tags) */
-.tags-section {
-    display: flex;
-    flex-wrap: wrap; /* Allows tags to wrap to the next line */
-    gap: 8px; /* Spacing between tags */
+.cards {
+  display: flex;
+  gap: 1rem;
 }
 
 .tag {
-    background-color: #ecf0f1;
-    color: #7f8c8d;
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 0.85em;
-    font-weight: 500;
-    text-transform: capitalize;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 999px;
+}
+
+.bookmark--section {
+  color: white;
+  text-shadow: #151515 0px 3px 9px;
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
 }
