@@ -5,248 +5,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harry Potter Quiz</title>
-   <h1>Harry Potter Quiz</h1>
-    <link rel="stylesheet" href="styles.css">
+    <title>Harry Potter Quiz - Bookmarks</title>
+    <!-- Assuming styles.css contains the necessary card and layout styling -->
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+        /* This minimal CSS ensures the body content doesn't get hidden by the fixed footer */
+        body {
+            padding-bottom: 5rem; /* Ensure space for the fixed footer */
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: #f4f7f9; /* Match footer context */
+        }
+        
+        /* Minimal styling for the footer to work without full Tailwind/CSS file */
+        .footer-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            border-top: 1px solid #e5e7eb;
+            box-shadow: 0 -10px 15px -3px rgba(0, 0, 0, 0.1), 0 -4px 6px -2px rgba(0, 0, 0, 0.05);
+            z-index: 50;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 4rem;
+            max-width: 32rem; 
+            margin: 0 auto;
+        }
+
+        .nav-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+            text-decoration: none; 
+            color: #6b7280; /* Inactive color */
+        }
+        
+        .nav-button.active {
+            color: #4f46e5; /* Active color */
+        }
+        .nav-button span {
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-top: 0.25rem;
+            line-height: 1;
+        }
+        .nav-button.active span {
+            font-weight: 600;
+        }
+        .nav-button img {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        /* Styles for the content section (assuming card styles come from styles.css) */
+        .app-header {
+            text-align: center;
+            padding: 1.5rem 0;
+            background-color: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .app-header h1 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-top: 0.5rem;
+        }
+        .card-list {
+            list-style: none;
+            padding: 1rem;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+    </style>
 </head>
-<body class="app app--home">
+<body class="app app--bookmarks">
+    
     <header class="app-header">
-              <img src="unnamed.png" alt="Harry Potter" width="300" height="300">
+        <img src="unnamed.png" alt="Harry Potter" width="300" height="300" style="max-width: 100%; height: auto;">
+        <h1>Bookmarked Questions</h1>
     </header>
 
-  
-
-   
-          <ol><b>I</b></ol>
-    
-         <li class="card-list__item">
-          <article class="card">
-            <h2 class="card__question">
-              Who is Harry Potter's best friend throughout the series?
-            </h2>
-            <button class="card__button-answer" type="button">
-              Show answer
-            </button>
-            <p class="card__answer card__answer--active">Ron Weasley</p>
-            <ul class="card__tag-list">
-              <li class="card__tag-list-item">#Harry Potter</li>
-              <li class="card__tag-list-item">#Characters></div></li>
-              <li class="card__tag-list-item">#Friends</div></li>
-            </ul>
-              <div class="card__button-bookmark">              
-              </button>
-            </div>
-          </article>
-        </li>
-    
-            
-    <ol><b>II</b></ol>
+    <ul class="card-list">
+        <!-- Card I: Who is Harry Potter's best friend? (BOOKMARKED) -->
         <li class="card-list__item">
-          <article class="card">
-            <h2 class="card__question">
-              What is the name of the lightning bolt-shaped scar on Harry Potter forehead?
-            </h2>
-            <button class="card__button-answer" type="button">
-              Show answer
-            </button>
-            <p class="card__answer">The Dark Mark</p>
-            <ul class="card__tag-list">
-              <li class="card__tag-list-item">#Harry Potter</li>
-              <li class="card__tag-list-item">#Symbolism</li>
-              <li class="card__tag-list-item">#Scar</li>
-            </ul>
-            <div class="card__button-bookmark">              
-              </button>
-            </div>
-          </article>
+            <article class="card bookmarked">
+                <h2 class="card__question">
+                    Who is Harry Potter's best friend throughout the series?
+                </h2>
+                <button class="card__button-answer" type="button">
+                    Show answer
+                </button>
+                <p class="card__answer card__answer--active">Ron Weasley</p>
+                <ul class="card__tag-list">
+                    <li class="card__tag-list-item">#Harry Potter</li>
+                    <li class="card__tag-list-item">#Characters</li>
+                    <li class="card__tag-list-item">#Friends</li>
+                </ul>
+                <div class="card__button-bookmark">
+                    <!-- Corrected structure for a button -->
+                    <button type="button" aria-label="Remove bookmark" class="bookmark-toggle-button bookmarked-icon">
+                         <img src="bookmark.svg" width="24" height="24" alt="Bookmark Icon">
+                    </button>
+                </div>
+            </article>
         </li>
-
-     <ol><b>III</b></ol>
-<li class="card-list__item">
-          <article class="card">
-            <h2 class="card__question">
-              Which magical creature guards the entrance to the Gryffindor common room?
-            </h2>
-            <button class="card__button-answer" type="button">
-              Show answer
-            </button>
-            <p class="card__answer">The Fat Lady (portrait)</p>
-            <ul class="card__tag-list">
-              <li class="card__tag-list-item">#Harry Potter</li>
-              <li class="card__tag-list-item">#Creatures</li>
-              <li class="card__tag-list-item">#Gryffindor</li>
-            </ul>
-            <div class="card__button-bookmark">
-              </button>
-            </div>
-          </article>
-       </li>
-
-
-    <ol><b>IV</b></ol>
-
+        
+        <!-- Card III: Gryffindor common room guard (BOOKMARKED) -->
         <li class="card-list__item">
-          <article class="card">
-            <h2 class="card__question">
-              What is the name of the name of the game played on flying broomsticks in the widarding world?
-            </h2>
-            <button class="card__button-answer" type="button">
-              Show answer
-            </button>
-            <p class="card__answer">Quidditch</p>
-            <ul class="card__tag-list">
-              <li class="card__tag-list-item">#Harry Potter</li>
-              <li class="card__tag-list-item">#Sports</li>
-              <li class="card__tag-list-item">#Magic</li>
-            </ul>
-            <div class="card__button-bookmark">
-             
-               
-                
-              </button>
-            </div>
-          </article>
-
+            <article class="card bookmarked">
+                <h2 class="card__question">
+                    Which magical creature guards the entrance to the Gryffindor common room?
+                </h2>
+                <button class="card__button-answer" type="button">
+                    Show answer
+                </button>
+                <p class="card__answer">The Fat Lady (portrait)</p>
+                <ul class="card__tag-list">
+                    <li class="card__tag-list-item">#Harry Potter</li>
+                    <li class="card__tag-list-item">#Creatures</li>
+                    <li class="card__tag-list-item">#Gryffindor</li>
+                </ul>
+                <div class="card__button-bookmark">
+                     <!-- Corrected structure for a button -->
+                    <button type="button" aria-label="Remove bookmark" class="bookmark-toggle-button bookmarked-icon">
+                         <img src="bookmark.svg" width="24" height="24" alt="Bookmark Icon">
+                    </button>
+                </div>
+            </article>
         </li>
-  
-       <ol><b>V</b></ol>
 
+        <!-- Card V: Three-headed dog (BOOKMARKED) -->
         <li class="card-list__item">
-          <article class="card">
-            <h2 class="card__question">
-              What is the name of the three-headed dog that guards the Sorcerer's Stone?
-            </h2>
-            <button class="card__button-answer" type="button">
-              Show answer
-            </button>
-            <p class="card__answer">Fluffy</p>
-            <ul class="card__tag-list">
-              <li class="card__tag-list-item">#Harry Potter</li>
-              <li class="card__tag-list-item">#Creatures</li>
-              <li class="card__tag-list-item">#Sorcerer's Stone</li>
-            </ul>
-            <div class="card__button-bookmark">
-                            
-              </button>
-            </div>
-          </article>
-
+            <article class="card bookmarked">
+                <h2 class="card__question">
+                    What is the name of the three-headed dog that guards the Sorcerer's Stone?
+                </h2>
+                <button class="card__button-answer" type="button">
+                    Show answer
+                </button>
+                <p class="card__answer">Fluffy</p>
+                <ul class="card__tag-list">
+                    <li class="card__tag-list-item">#Harry Potter</li>
+                    <li class="card__tag-list-item">#Creatures</li>
+                    <li class="card__tag-list-item">#Sorcerer's Stone</li>
+                </ul>
+                <div class="card__button-bookmark">
+                     <!-- Corrected structure for a button -->
+                    <button type="button" aria-label="Remove bookmark" class="bookmark-toggle-button bookmarked-icon">
+                         <img src="bookmark.svg" width="24" height="24" alt="Bookmark Icon">
+                    </button>
+                </div>
+            </article>
         </li>
-            
-     <ol><b>VI</b></ol>
+    </ul>
 
-        <li class="card-list__item">
-          <article class="card">
-            <h2 class="card__question">
-              Which professor is the head of Slytherin House at Hogwarts?
-            </h2>
-            <button class="card__button-answer" type="button">
-              Show answer
-            </button>
-            <p class="card__answer">Severus Snake</p>
-            <ul class="card__tag-list">
-              <li class="card__tag-list-item">#Harry Potter</li>
-              <li class="card__tag-list-item">#Characters</li>
-              <li class="card__tag-list-item">#Hogwarts</li>
-            </ul>
-            <div class="card__button-bookmark">
-              
-                
-              </button>
-            </div>
-          </article>
-
-
-    <ol><b>VII</b></ol>
-        </li>
-        <li class="card-list__item">
-          <article class="card">
-            <h2 class="card__question">
-              What is the name of the dark wizard who killed Harry Potter's parents and tried to kill him as a baby?
-            </h2>
-            <button class="card__button-answer" type="button">
-              Show answer
-            </button>
-            <p class="card__answer">Lord Voldemort (Tom Riddle)</p>
-            <ul class="card__tag-list">
-              <li class="card__tag-list-item">#Harry Potter</li>
-              <li class="card__tag-list-item">#Villains</div></li>
-              <li class="card__tag-list-item">#Characters</li>
-            </ul>
-            <div class="card__button-bookmark">
-             
-               
-                
-              </button>
-            </div>
-          </article>
-    
-
-        </li>
-
-    <ol><b>VIII</b></ol>
-<li class="card-list__item">
-          <article class="card">
-            <h2 class="card__question">
-             What type of creature is Dobby?
-            </h2>
-            <button class="card__button-answer" type="button">
-              Show answer
-            </button>
-            <p class="card__answer">House Elf</p>
-            <ul class="card__tag-list">
-              <li class="card__tag-list-item">#Harry Potter</li>
-              <li class="card__tag-list-item">#Creatures</li>
-              <li class="card__tag-list-item">Dobby</li>
-            </ul>
-            <div class="card__button-bookmark">
-            
-               
-                
-              </button>
-            </div>
-          </article>
-
-        </li>
-
-   <ol><b>IX</b></ol>
-        <li class="card-list__item">
-          <article class="card">
-            <h2 class="card__question">
-              What magical object allows the Marauders to create a map of Hogwarts that shows its layout and the location of people within it?
-            </h2>
-            <button class="card__button-answer" type="button">
-              Show answer
-            </button>
-            <p class="card__answer">The Maurauder's Map</p>
-            <ul class="card__tag-list">
-              <li class="card__tag-list-item">#Harry Potter</li>
-              <li class="card__tag-list-item">#Magical Objects</li>
-              <li class="card__tag-list-item">#Hogwarts/li>
-            </ul>
-            <div class="card__button-bookmark">
-                                       
-       
-            </div>
-          </article>
-
-        </li>
- <footer class="footer-nav">
+    <!-- Mobile Footer Navigation - BOOKMARKS is now ACTIVE -->
+    <footer class="footer-nav">
         <nav class="nav-container">
 
-            <!-- Home Button (Active) - Uses <img> tag -->
-            <a href="index.html" class="nav-button active" aria-label="navigates to home page">
+            <!-- Home Button (INACTIVE) -->
+            <a href="index.html" class="nav-button" aria-label="navigates to home page">
                 <img src="house.svg" width="24" height="24" alt="Home Icon">
                 <span>Home</span>
             </a>
 
-            <!-- Bookmarks Button - Uses <img> tag -->
-            <a href="bookmarks.html" class="nav-button" aria-label="navigates to category bookmarks">
+            <!-- Bookmarks Button (ACTIVE) -->
+            <a href="bookmarks.html" class="nav-button active" aria-label="navigates to category bookmarks">
                 <img src="bookmark.svg" width="24" height="24" alt="Bookmarks Icon">
                 <span>Bookmarks</span>
             </a>
 
-            <!-- Profile Button - Uses <img> tag (as requested) -->
+            <!-- Profile Button (INACTIVE) -->
             <a href="profile.html" class="nav-button" aria-label="navigates to profile page">
                 <img src="user-pen.svg" width="24" height="24" alt="Profile Icon">
                 <span>Profile</span>
@@ -254,7 +193,6 @@
 
         </nav>
     </footer>
-
 
 </body>
 </html>
