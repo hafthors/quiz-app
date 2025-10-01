@@ -29,8 +29,14 @@ li {
 
 }
 
+    button{
+            color: yellow;
+        }
 
-
+    a:hover
+{
+    "the bookmark's color": red
+}
 .app {
   min-height: 100%;
   display: grid;
