@@ -1,280 +1,133 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link rel="stylesheet" href="styles.css">
+    <script src="style.js" defer></script>
     <title>Harry Potter Quiz</title>
-   <h1>Harry Potter Quiz</h1>
-    <link rel="stylesheet" href="styles.css">
-    <script="style.js" defer></script>
+  
+
+
+
 </head>
-<body class="app app--home">
-    <header class="app-header">
-       <img src="unnamed.png" alt="Harry Potter"  width="300" height="300">
-       
-    </header>
 
-   <main>
-       <button id="toggle-all-answers-button" class="global-toggle-button" type="button">Show All Answers</button>
-          
-         <li class="card-list__item">
-          <article class="card">
-            <h2 class="card__question">
-              Who is Harry Potter's best friend throughout the series?
-            </h2>
-            <button class="card__button-answer" type="button">
-              Show answer
-            </button>
-            <p class="card__answer card__answer--active">Ron Weasley</p>
-            <ul class="card__tag-list">
-              <li class="card__tag-list-item">#Harry Potter</li>
-              <li class="card__tag-list-item">#Characters></div></li>
-              <li class="card__tag-list-item">#Friends</div></li>
-            </ul>
-            <div class="card__button-bookmark">
-              
-                          </div>
-                        
-          </article>
-        </li>
+<body>
+    <div class="container">
+        <header id="pageTitle">Harry Potter Quiz App</header>
 
-
-
-
-        <li class="card-list__item">
-          <article class="card">
-            <h2 class="card__question">
-              What is the name of the lightning bolt-shaped scar on Harry Potter forehead?
-            </h2>
-            <button class="card__button-answer" type="button">
-              Show answer
-            </button>
-            <p class="card__answer">The Dark Mark</p>
-            <ul class="card__tag-list">
-              <li class="card__tag-list-item">#Harry Potter</li>
-              <li class="card__tag-list-item">#Symbolism</li>
-              <li class="card__tag-list-item">#Scar</li>
-            </ul>
-            <div class="card__button-bookmark">
-              
-               
-                
-              </button>
+        <!-- Home Page -->
+        <div id="homePage" class="page active">
+            <div class="quiz-card">
+                <span class="bookmark-icon" onclick="toggleBookmark(this)">🔖</span>
+                <div class="question">Question?</div>
+                <div class="answer">What is the name of the school that Harry Potter attends?</div>
+                <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+                <div class="answer-content">Hogwarts School of Witchcraft and Wizardry.</div>
+                <div class="tags">
+                    <span class="tag">Harry Potter</span>
+                    <span class="tag">Hogwarts</span>
+                    <span class="tag">Fiction</span>
+                </div>
             </div>
-          </article>
 
-  
-
-        </li>
-<li class="card-list__item">
-          <article class="card">
-            <h2 class="card__question">
-              Which magical creature guards the entrance to the Gryffindor common room?
-            </h2>
-            <button class="card__button-answer" type="button">
-              Show answer
-            </button>
-            <p class="card__answer">The Fat Lady (portrait)</p>
-            <ul class="card__tag-list">
-              <li class="card__tag-list-item">#Harry Potter</li>
-              <li class="card__tag-list-item">#Creatures</li>
-              <li class="card__tag-list-item">#Gryffindor</li>
-            </ul>
-            <div class="card__button-bookmark">
-             
-               
-                
-              </button>
+            <div class="quiz-card">
+                <span class="bookmark-icon active" onclick="toggleBookmark(this)">🔖</span>
+                <div class="question">Question?</div>
+                <div class="answer">Who is Harry Potter's best friend throughout the series?</div>
+                <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+                <div class="answer-content">Ron Weasley</div>
+                <div class="tags">
+                    <span class="tag">Gryffindor</span>
+                    <span class="tag">Characthers</span>
+                    <span class="tag">Friends</span>
+                </div>
             </div>
-          </article>
 
-        </li>
-
-
- 
-
-        <li class="card-list__item">
-          <article class="card">
-            <h2 class="card__question">
-              What is the name of the name of the game played on flying broomsticks in the widarding world?
-            </h2>
-            <button class="card__button-answer" type="button">
-              Show answer
-            </button>
-            <p class="card__answer">Quidditch</p>
-            <ul class="card__tag-list">
-              <li class="card__tag-list-item">#Harry Potter</li>
-              <li class="card__tag-list-item">#Sports</li>
-              <li class="card__tag-list-item">#Magic</li>
-            </ul>
-            <div class="card__button-bookmark">
-             
-               
-                
-              </button>
+            <div class="quiz-card">
+                <span class="bookmark-icon" onclick="toggleBookmark(this)">🔖</span>
+                <div class="question">Question?</div>
+                <div class="answer">What is the name of the lightning bolt-shaped scar on Harry Potter's forehead?</div>
+                <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+                <div class="answer-content">The Dark Mark</div>
+                <div class="tags">
+                    <span class="tag">Harry Potter</span>
+                    <span class="tag">Symbolism</span>
+                    <span class="tag">Scar</span>
+                </div>
             </div>
-          </article>
+        </div>
 
-        </li>
-  
-
-
-        <li class="card-list__item">
-          <article class="card">
-            <h2 class="card__question">
-              What is the name of the three-headed dog that guards the Sorcerer's Stone?
-            </h2>
-            <button class="card__button-answer" type="button">
-              Show answer
-            </button>
-            <p class="card__answer">Fluffy</p>
-            <ul class="card__tag-list">
-              <li class="card__tag-list-item">#Harry Potter</li>
-              <li class="card__tag-list-item">#Creatures</li>
-              <li class="card__tag-list-item">#Sorcerer's Stone</li>
-            </ul>
-            <div class="card__button-bookmark">
-                            
-              </button>
+        <div class="quiz-card">
+            <span class="bookmark-icon" onclick="toggleBookmark(this)">🔖</span>
+            <div class="question">Question?</div>
+            <div class="answer">Which magical creature guards the entrance to the Gryffindor common room??</div>
+            <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
+            <div class="answer-content">The Fat Lady</div>
+            <div class="tags">
+                <span class="tag">Harry Potter</span>
+                <span class="tag">Creatures</span>
+                <span class="tag">Gryffindor</span>
             </div>
-          </article>
-
-        </li>
-            
-
-
-        <li class="card-list__item">
-          <article class="card">
-            <h2 class="card__question">
-              Which professor is the head of Slytherin House at Hogwarts?
-            </h2>
-            <button class="card__button-answer" type="button">
-              Show answer
-            </button>
-            <p class="card__answer">Severus Snake</p>
-            <ul class="card__tag-list">
-              <li class="card__tag-list-item">#Harry Potter</li>
-              <li class="card__tag-list-item">#Characters</li>
-              <li class="card__tag-list-item">#Hogwarts</li>
-            </ul>
-            <div class="card__button-bookmark">
-              
-                
-              </button>
-            </div>
-          </article>
-
-
-
-        </li>
-        <li class="card-list__item">
-          <article class="card">
-            <h2 class="card__question">
-              What is the name of the dark wizard who killed Harry Potter's parents and tried to kill him as a baby?
-            </h2>
-            <button class="card__button-answer" type="button">
-              Show answer
-            </button>
-            <p class="card__answer">Lord Voldemort (Tom Riddle)</p>
-            <ul class="card__tag-list">
-              <li class="card__tag-list-item">#Harry Potter</li>
-              <li class="card__tag-list-item">#Villains</div></li>
-              <li class="card__tag-list-item">#Characters</li>
-            </ul>
-            <div class="card__button-bookmark">
-             
-               
-                
-              </button>
-            </div>
-          </article>
-    
-
-        </li>
-<li class="card-list__item">
-          <article class="card">
-            <h2 class="card__question">
-             What type of creature is Dobby?
-            </h2>
-            <button class="card__button-answer" type="button">
-              Show answer
-            </button>
-            <p class="card__answer">House Elf</p>
-            <ul class="card__tag-list">
-              <li class="card__tag-list-item">#Harry Potter</li>
-              <li class="card__tag-list-item">#Creatures</li>
-              <li class="card__tag-list-item">Dobby</li>
-            </ul>
-            <div class="card__button-bookmark">
-            
-               
-                
-              </button>
-            </div>
-          </article>
-
-        </li>
-
-
-        <li class="card-list__item">
-          <article class="card">
-            <h2 class="card__question">
-              What magical object allows the Marauders to create a map of Hogwarts that shows its layout and the location of people within it?
-            </h2>
-            <button class="card__button-answer" type="button">
-              Show answer
-            </button>
-            <p class="card__answer">The Maurauder's Map</p>
-            <ul class="card__tag-list">
-              <li class="card__tag-list-item">#Harry Potter</li>
-              <li class="card__tag-list-item">#Magical Objects</li>
-              <li class="card__tag-list-item">#Hogwarts/li>
-            </ul>
-            <div class="card__button-bookmark">                 
-       
-            </div>
-          </article>
-
-        </li>
-
+        </div>
+        </div>
    
-                
-    </main>  
 
-     <footer class="footer-nav">
-        <nav class="nav-container">
-
-            <!-- Home Button (INACTIVE) -->
-            <a href="index.html" class="nav-button" aria-label="navigates to home page">
-                <img src="house.svg" width="24" height="24" alt="Home Icon">
-                <span>Home</span>
-            </a>
-
-            <!-- Bookmarks Button (ACTIVE) -->
-            <a href="bookmarks.html" class="nav-button active" aria-label="navigates to category bookmarks">
-                <img src="bookmark.svg" width="24" height="24" alt="Bookmarks Icon">
-                <span>Bookmarks</span>
-            </a>
-
-            <!-- Profile Button (INACTIVE) -->
-            <a href="profile.html" class="nav-button" aria-label="navigates to profile page">
-                <img src="user-pen.svg" width="24" height="24" alt="Profile Icon">
-                <span>Profile</span>
-            </a>
-
-        </nav>
-    </footer>
+        
 
 
+        <!-- Bookmarks Page -->
+        <div id="bookmarksPage" class="page">
+            <div id="bookmarkedQuestions"></div>
+        </div>
+
+        <!-- Profile Page -->
+        <div id="profilePage" class="page">
+            <div class="profile-section">
+                <div class="profile-header">
+                    <div class="profile-pic">👤</div>
+                    <div class="profile-name">Max Doe</div>
+                </div>
+
+                <div class="about-section">
+                    <h3>About me</h3>
+                    <textarea class="about-text"
+                        placeholder="Tell us about yourself...">Quiz enthusiast and lifelong learner!</textarea>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-box">
+                        <span>🎓</span>
+                        <span>12</span>
+                    </div>
+                    <div class="stat-box">
+                        <span>💬</span>
+                        <span>4</span>
+                    </div>
+                </div>
+
+                <div class="settings">
+                    <h3>Settings</h3>
+                    <div class="toggle-container">
+                        <span>Dark Mode</span>
+                        <div class="toggle" onclick="toggleDarkMode(this)">
+                            <div class="toggle-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="bottom-nav">
+        <button class="nav-btn active" onclick="showPage('home')">🏠</button>
+        <img src="user-pen.svg" width="24" height="24" alt="Profile Icon">
+        <button class="nav-btn" onclick="showPage('bookmarks')">🔖</button>
+        <button class="nav-btn" onclick="showPage('profile')">👤</button>
+    </nav>
+
+    </body>
+    </html>
 
 
-
-
-
-
-
-</body>
-</html>
