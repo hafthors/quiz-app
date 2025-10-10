@@ -21,83 +21,8 @@
 
     </header>
 
-  <div id="homePage" class="page active">
-            <div class="quiz-card">
-                <span class="bookmark-icon" onclick="toggleBookmark(this)">🔖</span>
-                <div class="question">Question?</div>
-                <div class="answer">What is the capital of France?</div>
-                <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
-                <div class="answer-content">Paris is the capital and most populous city of France.</div>
-                <div class="tags">
-                    <span class="tag">Geography</span>
-                    <span class="tag">Europe</span>
-                    <span class="tag">Capitals</span>
-                </div>
-            </div>
-
-            <div class="quiz-card">
-                <span class="bookmark-icon" onclick="toggleBookmark(this)">🔖</span>
-                <div class="question">Question?</div>
-                <div class="answer">What does CSS stand for?</div>
-                <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
-                <div class="answer-content">CSS stands for Cascading Style Sheets. It's used to style and layout web pages.</div>
-                <div class="tags">
-                    <span class="tag">CSS</span>
-                    <span class="tag">Web</span>
-                </div>
-            </div>
-
-            <div class="quiz-card">
-                <span class="bookmark-icon" onclick="toggleBookmark(this)">🔖</span>
-                <div class="question">Question?</div>
-                <div class="answer">What is JavaScript used for?</div>
-                <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
-                <div class="answer-content">JavaScript is a programming language used to create interactive and dynamic content on websites.</div>
-                <div class="tags">
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">Programming</span>
-                </div>
-            </div>
-
-            <div class="quiz-card">
-                <span class="bookmark-icon" onclick="toggleBookmark(this)">🔖</span>
-                <div class="question">Question?</div>
-                <div class="answer">What is the largest planet in our solar system?</div>
-                <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
-                <div class="answer-content">Jupiter is the largest planet in our solar system, with a diameter of about 143,000 kilometers.</div>
-                <div class="tags">
-                    <span class="tag">Science</span>
-                    <span class="tag">Space</span>
-                    <span class="tag">Planets</span>
-                </div>
-            </div>
-
-            <div class="quiz-card">
-                <span class="bookmark-icon" onclick="toggleBookmark(this)">🔖</span>
-                <div class="question">Question?</div>
-                <div class="answer">Who painted the Mona Lisa?</div>
-                <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
-                <div class="answer-content">Leonardo da Vinci painted the Mona Lisa during the Renaissance period, around 1503-1519.</div>
-                <div class="tags">
-                    <span class="tag">Art</span>
-                    <span class="tag">History</span>
-                    <span class="tag">Renaissance</span>
-                </div>
-            </div>
-
-            <div class="quiz-card">
-                <span class="bookmark-icon" onclick="toggleBookmark(this)">🔖</span>
-                <div class="question">Question?</div>
-                <div class="answer">What is the speed of light?</div>
-                <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
-                <div class="answer-content">The speed of light in a vacuum is approximately 299,792,458 meters per second (or about 186,282 miles per second).</div>
-                <div class="tags">
-                    <span class="tag">Physics</span>
-                    <span class="tag">Science</span>
-                </div>
-            </div>
-        </div>
-
+ 
+          
         <!-- Bookmarks Page -->
         <div id="bookmarksPage" class="page">
             <div class="bookmark-header">
@@ -114,13 +39,30 @@
             <input type="text" id="newQuestion" placeholder="Add your own question...">
             <button class="btn btn-add" onclick="addQuestion()">+ Add</button>
         </div>
-   
-<nav class="bottom-nav">
-        <button class="nav-btn active" onclick="showPage('home')">🏠</button>
-        <button class="nav-btn" onclick="showPage('bookmarks')">🔖</button>
-        <button class="nav-btn" onclick="showPage('profile')">👤</button>
-    </nav>
-   
+   <br>
+ <footer class="footer-nav">
+        <nav class="nav-container">
+
+            <!-- Home Button (INACTIVE) -->
+            <a href="index.html" class="nav-button" aria-label="navigates to home page">
+                <img src="house.svg" width="24" height="24" alt="Home Icon">
+                <span>Home</span>
+            </a>
+
+            <!-- Bookmarks Button (ACTIVE) -->
+            <a href="bookmarks.html" class="nav-button active" aria-label="navigates to category bookmarks">
+                <img src="bookmark.svg" width="24" height="24" alt="Bookmarks Icon">
+                <span>Bookmarks</span>
+            </a>
+
+            <!-- Profile Button (INACTIVE) -->
+            <a href="profile.html" class="nav-button" aria-label="navigates to profile page">
+                <img src="user-pen.svg" width="24" height="24" alt="Profile Icon">
+                <span>Profile</span>
+            </a>
+
+        </nav>
+    </footer>
 </body>
 
 </html>
