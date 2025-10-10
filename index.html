@@ -1,110 +1,218 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
+
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <link rel="stylesheet" href="styles.css">
-    <script src="style.js" defer></script>
     <title>Harry Potter Quiz</title>
-  
+
+
+
+
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="style.js" defer></script>
 </head>
 
-<body>
-    <div class="container">
-        <header id="pageTitle"Harry Potter Quiz App>
+
+<body class="app app--home">
+    <header class="app-header">
         <img src="unnamed.png" alt="Harry Potter" width="300" height="300">
-        </header>
+        <h1>📚 Harry Potter Quiz</h1>
+        <p class="subtitle">Bookmark your favorite questions</p>
 
-        <!-- Home Page -->
-        <div id="homePage" class="page active">
-            <div class="quiz-card">
-                <span class="bookmark-icon" onclick="toggleBookmark(this)">🔖</span>
-                <div class="question">Question?</div>
-                <div class="answer">What is the name of the school that Harry Potter attends?</div>
-                <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
-                <div class="answer-content">Hogwarts School of Witchcraft and Wizardry.</div>
-                <div class="tags">
-                    <span class="tag">Harry Potter</span>
-                    <span class="tag">Hogwarts</span>
-                    <span class="tag">Fiction</span>
-                </div>
-            </div>
 
-            <div class="quiz-card">
-                <span class="bookmark-icon active" onclick="toggleBookmark(this)">🔖</span>
-                <div class="question">Question?</div>
-                <div class="answer">Who is Harry Potter's best friend throughout the series?</div>
-                <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
-                <div class="answer-content">Ron Weasley</div>
-                <div class="tags">
-                    <span class="tag">Gryffindor</span>
-                    <span class="tag">Characthers</span>
-                    <span class="tag">Friends</span>
-                </div>
-            </div>
+    </header>
 
-            <div class="quiz-card">
-                <span class="bookmark-icon" onclick="toggleBookmark(this)">🔖</span>
-                <div class="question">Question?</div>
-                <div class="answer">What is the name of the lightning bolt-shaped scar on Harry Potter's forehead?</div>
-                <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
-                <div class="answer-content">The Dark Mark</div>
-                <div class="tags">
-                    <span class="tag">Harry Potter</span>
-                    <span class="tag">Symbolism</span>
-                    <span class="tag">Scar</span>
-                </div>
-            </div>
-        </div>
 
-        <div class="quiz-card">
-            <span class="bookmark-icon" onclick="toggleBookmark(this)">🔖</span>
-            <div class="question">Question?</div>
-            <div class="answer">Which magical creature guards the entrance to the Gryffindor common room??</div>
-            <button class="show-answer-btn" onclick="toggleAnswer(this)">Show Answer</button>
-            <div class="answer-content">The Fat Lady</div>
-            <div class="tags">
-                <span class="tag">Harry Potter</span>
-                <span class="tag">Creatures</span>
-                <span class="tag">Gryffindor</span>
-            </div>
-        </div>
-        </div>
-   
-  <div id="bookmarksPage" class="page">
-            <div id="bookmarkedQuestions"></div>
-        </div>
+    <body>
 
-        
-                <div class="stats">
-                    <div class="stat-box">
-                        <span>🎓</span>
-                        <span>12</span>
-                    </div>
-                    <div class="stat-box">
-                        <span>💬</span>
-                        <span>4</span>
+
+<div class="container">
+    <div class="main-content">
+        <div class="card">
+
+            <div class="question-list" id="allQuestions">
+                <h2>Questions</h2>
+
+
+
+                <div class="question-item">
+                    <span class="question-text">Who is Harry Potter's best friend throughout the series of the
+                        adventures of Harry Potter?</span>
+                    <button class="btn btn-bookmark" onclick="toggleBookmark(0)">★ Bookmark</button>
+                    <form onsubmit="alert('Answer submitted for Q1!'); return false;">
+                        <div class="answer-options">
+                            <label class="option-label">
+                                <input type="radio" name="q1_answer" value="ron" class="option-input" required>
+                                Ronald Weasley
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q1_answer" value="hermione" class="option-input">
+                                Hermione Granger
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q1_answer" value="hagrid" class="option-input">
+                                Rubeus Hagrid
+                            </label>
+
+
+                            <br>
+                            <button type="submit" class="btn-submit">Submit Answer</button>
+                            <br>
+                    </form>
+                    <br>
+                    <div class="correct-answer-reveal" id="q1_answer_reveal">
+                        The answer is **Ronald Weasley**.
                     </div>
                 </div>
+                <div class="question-item">
+                    <span class="question-text">
+                        Which magical creature guards the entrance to the Gryffindor common room?
+                    </span>
+                    <button class="btn btn-bookmark" onclick="toggleBookmark(1)">★ Bookmark</button>
 
-                <div class="settings">
-                    <h3>Settings</h3>
-                    <div class="toggle-container">
-                        <span>Dark Mode</span>
-                        <div class="toggle" onclick="toggleDarkMode(this)">
-                            <div class="toggle-circle"></div>
+                    <form onsubmit="showAnswer(event, 'q1_answer_reveal')">
+                        <div class="answer-options">
+                            <label class="option-label">
+                                <input type="radio" name="q2_answer" value="portrait" class="option-input" required>
+                                The Fat Lady's Portrait
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q2_answer" value="griffin" class="option-input">
+                                A Griffin
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q2_answer" value="dwarf" class="option-input">
+                                A Stone Dwarf
+                            </label>
                         </div>
+
+                        <br>
+                        <button type="submit" class="btn-submit">Submit Answer</button>
+                    </form>
+
+                    <div class="correct-answer-reveal" id="q1_answer_reveal" style="display: none; margin-top: 8px;">
+                        ✅ The answer is <strong>The Fat Lady's Portrait</strong>.
                     </div>
                 </div>
+
+
+
+
+
+
+
+
+
+                <div class="question-item">
+                    <span class="question-text">What is the name of the game played on flying broomsticks in the
+                        wizarding world?</span>
+                    <button class="btn btn-bookmark" onclick="toggleBookmark(2)">★ Bookmark</button>
+                    <form onsubmit="alert('Answer submitted for Q3!'); return false;">
+                        <div class="answer-options">
+                            <label class="option-label">
+                                <input type="radio" name="q3_answer" value="quidditch" class="option-input" required>
+                                Quidditch
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q3_answer" value="snitchball" class="option-input">
+                                Snitchball
+                            </label>
+
+                            <label class="option-label">
+                                <input type="radio" name="q3_answer" value="bludgerpong" class="option-input">
+                                Bludger Pong
+                            </label>
+
+                        </div>
+
+                </div>
+
+                <button type="submit" class="btn-submit">Submit Answer</button>
+                </form>
+                <div class="correct-answer-reveal" id="q3_answer_reveal">
+                    The answer is **Quidditch**.
+                </div>
+            </div>
+
+
+            <div class="question-item">
+                <span class="question-text">What is the name of the three-headed dog that guards the
+                    Sorcerer's Stone?</span>
+                <button class="btn btn-bookmark" onclick="toggleBookmark(3)">★ Bookmark</button>
+                <form onsubmit="alert('Answer submitted for Q4!'); return false;">
+                    <div class="answer-options">
+                        <label class="option-label">
+                            <input type="radio" name="q4_answer" value="fluffy" class="option-input" required>
+                            Fluffy
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="q4_answer" value="cerberus" class="option-input">
+                            Cerberus
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="q4_answer" value="fang" class="option-input">
+                            Fang
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="q4_answer" value="Fluffy" class="option-input">
+
+                        </label>
+
+                    </div>
+
+            </div>
+            <button type="submit" class="btn-submit">Submit Answer</button>
+            </form>
+            <div class="correct-answer-reveal" id="q1_answer_reveal">
+                The answer is **Fluffy**.
             </div>
         </div>
-    </div>
-           
+
+
+        <div class="question-item">
+            <span class="question-text">Which professor is the head of Slytherin House at
+                Hogwarts?</span>
+            <button class="btn btn-bookmark" onclick="toggleBookmark(4)">★ Bookmark</button>
+            <form onsubmit="alert('Answer submitted for Q5!'); return false;">
+                <div class="answer-options">
+                    <label class="option-label">
+                        <input type="radio" name="q5_answer" value="snape" class="option-input" required>
+                        Severus Snape
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5_answer" value="slytherin" class="option-input">
+                        Salazar Slytherin
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="q5_answer" value="Harry Potter" class="option-input">
+                        Harry Potter
+                    </label>
+
+
+                    <label class="option-label">
+                        <input type="radio" name="q5_answer" value="Hogwarts" class="option-input">
+                        Hogwarts
+                    </label>
+
+                </div>
+                <button type="submit" class="btn-submit">Submit Answer</button>
+            </form>
+            <div class="correct-answer-reveal" id="q1_answer_reveal">
+                The answer is **Severus Snape**.
+            </div>
+    
 
 
 
-     <footer class="footer-nav">
+
+                    <footer class="footer-nav">
                         <nav class="nav-container">
 
 
@@ -128,10 +236,61 @@
 
 
                         </nav>
-     </footer>
-    </body>
-    </html>
+                    </footer>
 
+        </body>
+
+
+</html>
+
+
+
+
+
+
+        
+
+        
+
+
+
+
+
+
+
+     
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+                 
 
 
 
