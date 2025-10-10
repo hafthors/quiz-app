@@ -1,4 +1,4 @@
-let bookmarkedCards = [];
+ let bookmarkedCards = [];
 
         function showPage(page) {
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
