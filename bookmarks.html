@@ -1,82 +1,170 @@
 
-<!DOCTYPE html>
-<html lang="en">
+/* Bookmarks Page CSS - Add to your styles.css or in a <style> tag */
 
+/* ===== CARD STYLING ===== */
+.card {
+    position: relative;
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harry Potter Quiz</title>
+.card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
 
+/* Card Question */
+.card__question {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 1rem 0;
+    padding-right: 3rem; /* Space for bookmark button */
+}
 
-    <link rel="stylesheet" href="styles.css">
-    <script src="style.js" defer></script>
-</head>
+/* ===== ANSWER BUTTON STYLING ===== */
+.card__button-answer {
+    padding: 0.625rem 1.5rem;
+    margin: 1rem 0;
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
 
+.card__button-answer:hover {
+    background-color: #4338ca;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
 
-<body class="app app--home">
-    <header class="app-header">
-        <img src="unnamed.png" alt="Harry Potter" width="300" height="300">
-        <h1>Harry Potter Quiz</h1>
-        <p class="subtitle">Bookmark your favorite questions</p>
+.card__button-answer:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
 
+/* ===== ANSWER DISPLAY ===== */
+.card__answer {
+    display: none;
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: #f0fdf4;
+    border-left: 4px solid #22c55e;
+    border-radius: 6px;
+    color: #166534;
+    font-weight: 500;
+    line-height: 1.5;
+}
 
-    </header>
+.card__answer--active {
+    display: block;
+    animation: slideDown 0.3s ease-out;
+}
 
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-    <body>
+/* ===== TAG LIST STYLING ===== */
+.card__tag-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
 
-       <div class="container">
-            
+.card__tag-list-item {
+    background-color: #f3f4f6;
+    color: #4b5563;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+}
 
-            <div class="main-content">
-                <div class="card">
-                    <h2>All Questions</h2>
-                    <div class="question-list" id="allQuestions">
-                        <div class="question-item">
-                            <span class="question-text">What is the meaning of life?</span>
-                            <button class="btn btn-bookmark" onclick="toggleBookmark(0)">â˜… Bookmark</button>
-                        </div>
-                        <div class="question-item">
-                            <span class="question-text">How does quantum computing work?</span>
-                            <button class="btn btn-bookmark" onclick="toggleBookmark(1)">â˜… Bookmark</button>
-     
+/* ===== BOOKMARK BUTTON STYLING ===== */
+.card__button-bookmark {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
 
-                <div class="card">
-                    <h2>My Bookmarks</h2>
-                    <div class="question-list" id="bookmarkedQuestions">
-                        <div class="empty-state">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
-                            </svg>
-                         
-                      
+.bookmark-toggle-button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: #fef3c7;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-        <footer class="footer-nav">
-            <nav class="nav-container">
+.bookmark-toggle-button:hover {
+    background-color: #fde68a;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
 
+.bookmark-toggle-button:active {
+    transform: scale(0.95);
+}
 
-                <a href="index.html" class="nav-button" aria-label="navigates to home page">
-                    <img src="house.svg" width="24" height="24" alt="Home Icon">
-                    <span>Home</span>
-                </a>
+/* Bookmarked state */
+.bookmark-toggle-button.bookmarked-icon {
+    background-color: #fbbf24;
+}
 
+.bookmark-toggle-button.bookmarked-icon:hover {
+    background-color: #f59e0b;
+}
 
-                <a href="bookmarks.html" class="nav-button active" aria-label="navigates to category bookmarks">
-                    <img src="bookmark.svg" width="24" height="24" alt="Bookmarks Icon">
-                    <span>Bookmarks</span>
-                </a>
+/* Icon color filter for better visibility */
+.bookmark-toggle-button img {
+    filter: brightness(0.3);
+}
 
+.bookmark-toggle-button.bookmarked-icon img {
+    filter: brightness(1) invert(1);
+}
 
-                <a href="profile.html" class="nav-button" aria-label="navigates to profile page">
-                    <img src="user-pen.svg" width="24" height="24" alt="Profile Icon">
-                    <span>Profile</span>
-                </a>
+/* ===== CARD LIST ITEM ANIMATION ===== */
+.card-list__item {
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
 
-
-            </nav>
-        </footer>
-    </body>
-
-
-</html>
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 640px) {
+    .card {
+        padding: 1.25rem;
+    }
+    
+    .card__question {
+        font-size: 1rem;
+    }
+    
+    .card__button-answer {
+        width: 100%;
+        padding: 0.75rem;
+    }
+}
