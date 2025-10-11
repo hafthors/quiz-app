@@ -17,7 +17,7 @@
 <body class="app app--home">
     <header class="app-header">
         <img src="unnamed.png" alt="Harry Potter" width="300" height="300">
-        <h1>ðŸ“š Harry Potter Quiz</h1>
+        <h1>Harry Potter Quiz</h1>
         <p class="subtitle">Bookmark your favorite questions</p>
 
 
@@ -40,28 +40,7 @@
                         <div class="question-item">
                             <span class="question-text">How does quantum computing work?</span>
                             <button class="btn btn-bookmark" onclick="toggleBookmark(1)">â˜… Bookmark</button>
-                        </div>
-                        <div class="question-item">
-                            <span class="question-text">What are the best practices for web development?</span>
-                            <button class="btn btn-bookmark" onclick="toggleBookmark(2)">â˜… Bookmark</button>
-                        </div>
-                        <div class="question-item">
-                            <span class="question-text">How can I improve my productivity?</span>
-                            <button class="btn btn-bookmark" onclick="toggleBookmark(3)">â˜… Bookmark</button>
-                        </div>
-                        <div class="question-item">
-                            <span class="question-text">What is the future of artificial intelligence?</span>
-                            <button class="btn btn-bookmark" onclick="toggleBookmark(4)">â˜… Bookmark</button>
-                        </div>
-                    </div>
-
-                    <div class="add-question-form">
-                        <div class="input-group">
-                            <input type="text" id="newQuestion" placeholder="Add your own question...">
-                            <button class="btn btn-add" onclick="addQuestion()">+ Add</button>
-                        </div>
-                    </div>
-                </div>
+     
 
                 <div class="card">
                     <h2>My Bookmarks</h2>
@@ -71,30 +50,7 @@
                                 <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
                             </svg>
                          
-                        </div>
-                    </div>
-                    <button class="btn btn-clear" onclick="clearAllBookmarks()" style="display: none;"
-                        id="clearBtn">Clear All
-                        Bookmarks</button>
-                    <button class="btn btn-export" onclick="exportBookmarks()">Export Bookmarks Page</button>
-                    <div class="export-info" id="exportInfo" style="display: none;">
                       
-                    </div>
-                </div>
-            </div>
-
-            <div class="stats">
-                <div class="stat-item">
-                    <div class="stat-number" id="totalQuestions">5</div>
-                    <div class="stat-label">Total Questions</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" id="bookmarkedCount">0</div>
-                    <div class="stat-label">Bookmarked</div>
-                </div>
-            </div>
-        
-
 
         <footer class="footer-nav">
             <nav class="nav-container">
