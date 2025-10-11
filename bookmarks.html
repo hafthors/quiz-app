@@ -2,83 +2,125 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harry Potter Quiz - Bookmarks</title>
-    <!-- Assuming styles.css contains the necessary card and layout styling -->
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <title>Harry Potter Quiz</title>
 
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="style.js" defer></script>
 </head>
 
-<body class="app app--bookmarks">
 
+<body class="app app--home">
     <header class="app-header">
-  
-   <img src="Gemini_harrypotter.png" alt="Harry Potter" width="300" height="300">
-        
-        <h1>Bookmarked Questions</h1>
+        <img src="unnamed.png" alt="Harry Potter" width="300" height="300">
+        <h1>ðŸ“š Harry Potter Quiz</h1>
+        <p class="subtitle">Bookmark your favorite questions</p>
 
 
     </header>
 
-    <br>>
-       
-   
-   <br>
-   
-   <br>
-   <br>
-    <div class="add-question-form">
-        <div class="input-group">
-            <input type="text" id="newQuestion" placeholder="Add your own question...">
-            <button class="btn btn-add" onclick="addQuestion()">+ Add</button>
-        </div>
-    </div>
-    </div>
-    
-    <div class="card">
-        <h2>My Bookmarks</h2>
-        <div class="question-list" id="bookmarkedQuestions">
-            <div class="empty-state">
-                <img src="bookmark.svg"="none" stroke="currentColor" stroke-width="2">
-                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
-                </svg>
-                <p>No bookmarks yet.<br>Click the bookmark button to save questions!</p>
+
+    <body>
+
+       <div class="container">
+            
+
+            <div class="main-content">
+                <div class="card">
+                    <h2>All Questions</h2>
+                    <div class="question-list" id="allQuestions">
+                        <div class="question-item">
+                            <span class="question-text">What is the meaning of life?</span>
+                            <button class="btn btn-bookmark" onclick="toggleBookmark(0)">â˜… Bookmark</button>
+                        </div>
+                        <div class="question-item">
+                            <span class="question-text">How does quantum computing work?</span>
+                            <button class="btn btn-bookmark" onclick="toggleBookmark(1)">â˜… Bookmark</button>
+                        </div>
+                        <div class="question-item">
+                            <span class="question-text">What are the best practices for web development?</span>
+                            <button class="btn btn-bookmark" onclick="toggleBookmark(2)">â˜… Bookmark</button>
+                        </div>
+                        <div class="question-item">
+                            <span class="question-text">How can I improve my productivity?</span>
+                            <button class="btn btn-bookmark" onclick="toggleBookmark(3)">â˜… Bookmark</button>
+                        </div>
+                        <div class="question-item">
+                            <span class="question-text">What is the future of artificial intelligence?</span>
+                            <button class="btn btn-bookmark" onclick="toggleBookmark(4)">â˜… Bookmark</button>
+                        </div>
+                    </div>
+
+                    <div class="add-question-form">
+                        <div class="input-group">
+                            <input type="text" id="newQuestion" placeholder="Add your own question...">
+                            <button class="btn btn-add" onclick="addQuestion()">+ Add</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>My Bookmarks</h2>
+                    <div class="question-list" id="bookmarkedQuestions">
+                        <div class="empty-state">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                         
+                        </div>
+                    </div>
+                    <button class="btn btn-clear" onclick="clearAllBookmarks()" style="display: none;"
+                        id="clearBtn">Clear All
+                        Bookmarks</button>
+                    <button class="btn btn-export" onclick="exportBookmarks()">Export Bookmarks Page</button>
+                    <div class="export-info" id="exportInfo" style="display: none;">
+                      
+                    </div>
+                </div>
             </div>
-        </div>
-        <button class="btn btn-clear" onclick="clearAllBookmarks()" style="display: none;" id="clearBtn">Clear
-            All Bookmarks</button>
-    </div>
-    </div>
-    <br>
 
-   <footer class="footer-nav">
-        <nav class="nav-container">
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number" id="totalQuestions">5</div>
+                    <div class="stat-label">Total Questions</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="bookmarkedCount">0</div>
+                    <div class="stat-label">Bookmarked</div>
+                </div>
+            </div>
+        
 
-            <!-- Home Button (INACTIVE) -->
-            <a href="index.html" class="nav-button" aria-label="navigates to home page">
-                <img src="house.svg" width="24" height="24" alt="Home Icon">
-                <span>Home</span>
-            </a>
 
-            <!-- Bookmarks Button (ACTIVE) -->
-            <a href="bookmarks.html" class="nav-button active" aria-label="navigates to category bookmarks">
-                <img src="bookmark.svg" width="24" height="24" alt="Bookmarks Icon">
-                <span>Bookmarks</span>
-            </a>
+        <footer class="footer-nav">
+            <nav class="nav-container">
 
-            <!-- Profile Button (INACTIVE) -->
-            <a href="profile.html" class="nav-button" aria-label="navigates to profile page">
-                <img src="user-pen.svg" width="24" height="24" alt="Profile Icon">
-                <span>Profile</span>
-            </a>
 
-        </nav>
-    </footer>
+                <a href="index.html" class="nav-button" aria-label="navigates to home page">
+                    <img src="house.svg" width="24" height="24" alt="Home Icon">
+                    <span>Home</span>
+                </a>
 
-</body>
+
+                <a href="bookmarks.html" class="nav-button active" aria-label="navigates to category bookmarks">
+                    <img src="bookmark.svg" width="24" height="24" alt="Bookmarks Icon">
+                    <span>Bookmarks</span>
+                </a>
+
+
+                <a href="profile.html" class="nav-button" aria-label="navigates to profile page">
+                    <img src="user-pen.svg" width="24" height="24" alt="Profile Icon">
+                    <span>Profile</span>
+                </a>
+
+
+            </nav>
+        </footer>
+    </body>
+
 
 </html>
-
