@@ -1,11 +1,13 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+       <link rel="stylesheet" href="style.css">
+    <script src="style.js" defer></script>
     <title>Harry Potter Quiz</title>
   
 
@@ -15,7 +17,10 @@
 
 <body>
     <div class="container">
-        <header id="pageTitle">Harry Potter Quiz App</header>
+        <header id="pageTitle">Harry Potter Quiz App>
+        
+        </header>
+        
 
         <!-- Home Page -->
         <div id="homePage" class="page active">
@@ -78,7 +83,6 @@
 
 
      
-
                 <div class="stats">
                     <div class="stat-box">
                         <span>🎓</span>
@@ -103,11 +107,30 @@
         </div>
     </div>
 
-    <nav class="bottom-nav">
-        <button class="nav-btn active" onclick="showPage('home')">🏠</button>
-        <button class="nav-btn" onclick="showPage('bookmarks')">🔖</button>
-        <button class="nav-btn" onclick="showPage('profile')">👤</button>
-    </nav>
+     <footer class="footer-nav">
+        <nav class="nav-container">
+
+            <!-- Home Button (INACTIVE) -->
+            <a href="index.html" class="nav-button" aria-label="navigates to home page">
+                <img src="house.svg" width="24" height="24" alt="Home Icon">
+         
+            </a>
+
+            <!-- Bookmarks Button (ACTIVE) -->
+            <a href="bookmarks.html" class="nav-button active" aria-label="navigates to category bookmarks">
+                <img src="bookmark.svg" width="24" height="24" alt="Bookmarks Icon">
+             
+            </a>
+
+            <!-- Profile Button (INACTIVE) -->
+            <a href="profile.html" class="nav-button" aria-label="navigates to profile page">
+                <img src="user-pen.svg" width="24" height="24" alt="Profile Icon">
+              
+            </a>
+
+        </nav>
+    </footer>
+
 
     </body>
     </html>
