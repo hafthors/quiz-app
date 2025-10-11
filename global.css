@@ -1,142 +1,96 @@
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+       /* Add these styles to your styles.css file */
 
-        body {
-            font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: #f1f1f1;
-            padding: 20px;
-            min-height: 100vh;
-        }
+/* Hide answers by default */
+.card__answer {
+  display: none;
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  border-left: 4px solid #4CAF50;
+}
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+/* Show answer when active */
+.card__answer--active {
+  display: block;
+}
 
-        header {
-            text-align: center;
-            padding: 30px 0;
-            border-bottom: 3px solid #740001;
-            margin-bottom: 30px;
-        }
+/* Answer button styling */
+.card__button-answer {
+  padding: 0.5rem 1.5rem;
+  margin: 1rem 0;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
 
-        h1 {
-            font-size: 2.5em;
-            color: #d3a625;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            margin-bottom: 10px;
-        }
+.card__button-answer:hover {
+  background-color: #45a049;
+}
 
-        .subtitle {
-            color: #aaa;
-            font-style: italic;
-        }
+.card__button-answer:active {
+  transform: scale(0.98);
+}
 
-        .question-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(211, 166, 37, 0.3);
-            border-radius: 10px;
-            padding: 25px;
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
-        }
+/* Bookmark button styling */
+.bookmark {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
 
-        .question-card:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(211, 166, 37, 0.5);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
+.bookmark::before {
+  content: "☆";
+  font-size: 1.5rem;
+  color: #666;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-        .question {
-            font-size: 1.2em;
-            margin-bottom: 15px;
-            color: #f1f1f1;
-            line-height: 1.6;
-        }
+.bookmark:hover {
+  border-color: #FFD700;
+}
 
-        .show-btn {
-            background: #740001;
-            color: #d3a625;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            margin-bottom: 10px;
-        }
+.bookmark:hover::before {
+  color: #FFD700;
+}
 
-        .show-btn:hover {
-            background: #a00001;
-            transform: scale(1.05);
-        }
+/* Active bookmark state */
+.bookmark--active {
+  background-color: #FFD700;
+  border-color: #FFD700;
+}
 
-        .answer {
-            display: none;
-            background: rgba(211, 166, 37, 0.1);
-            border-left: 4px solid #d3a625;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 5px;
-            font-size: 1.1em;
-            color: #d3a625;
-            animation: fadeIn 0.3s ease;
-        }
+.bookmark--active::before {
+  content: "★";
+  color: white;
+}
 
-        .answer.show {
-            display: block;
-        }
+/* Bookmark button container positioning */
+.card__button-bookmark {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 15px;
-        }
-
-        .tag {
-            background: rgba(116, 0, 1, 0.3);
-            color: #d3a625;
-            padding: 6px 12px;
-            border-radius: 15px;
-            font-size: 0.85em;
-            cursor: pointer;
-            border: 1px solid rgba(211, 166, 37, 0.3);
-            transition: all 0.2s ease;
-        }
-
-        .tag:hover {
-            background: rgba(116, 0, 1, 0.5);
-            border-color: #d3a625;
-            transform: translateY(-2px);
-        }
-
-        .tag:active {
-            transform: translateY(0);
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            padding: 20px;
-            color: #888;
-            border-top: 1px solid rgba(211, 166, 37, 0.3);
-        }
+/* Card positioning for bookmark */
+.card {
+  position: relative;
+  padding: 2rem;
+  margin: 1rem 0;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
