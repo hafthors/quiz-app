@@ -1,67 +1,116 @@
- let bookmarkedCards = [];
+   let questions = [
+             { text: "Who is Harry Potter's best friend throughout the series?", bookmarked: false, answer: "" },
+            { text: "Which magical creature guards the entrance to the Gryffindor common room?", bookmarked: false, answer: "" },
+            { text: "What is the name of the name of the game played on flying broomsticks in the widarding world?", bookmarked: false, answer: "" },
+            { text: "What is the name of the three-headed dog that guards the Sorcerer's Stonety?", bookmarked: false, answer: "" },
+            { text: "Which professor is the head of Slytherin House at Hogwarts?", bookmarked: false, answer: "" }
+        ]; 
+        
+       
 
-        function showPage(page) {
-            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
-            
-            if (page === 'home') {
-                document.getElementById('homePage').classList.add('active');
-                document.getElementById('pageTitle').textContent = 'Quiz App';
-                event.target.classList.add('active');
-            } else if (page === 'bookmarks') {
-                document.getElementById('bookmarksPage').classList.add('active');
-                document.getElementById('pageTitle').textContent = 'Bookmarks';
-                event.target.classList.add('active');
-                updateBookmarksPage();
-            } else if (page === 'profile') {
-                document.getElementById('profilePage').classList.add('active');
-                document.getElementById('pageTitle').textContent = 'Profile';
-                event.target.classList.add('active');
+      function toggleBookmark(index) {
+            questions[index].bookmarked = !questions[index].bookmarked;
+            updateDisplay();
+        }
+
+
+        function removeBookmark(index) {
+            questions[index].bookmarked = false;
+            updateDisplay();
+        }
+
+
+        function addQuestion() {
+            const input = document.getElementById('newQuestion');
+            const text = input.value.trim();
+           
+            if (text) {
+                questions.push({ text: text, bookmarked: false });
+                input.value = '';
+                updateDisplay();
             }
         }
 
-        function toggleBookmark(icon) {
-            icon.classList.toggle('active');
-            const card = icon.closest('.quiz-card');
-            
-            if (icon.classList.contains('active')) {
-                if (!bookmarkedCards.includes(card)) {
-                    bookmarkedCards.push(card);
-                }
+
+        function clearAllBookmarks() {
+            if (confirm('Are you sure you want to clear all bookmarks?')) {
+                questions.forEach(q => q.bookmarked = false);
+                updateDisplay();
+            }
+        }
+
+
+        function updateDisplay() {
+            const allQuestionsDiv = document.getElementById('allQuestions');
+            const bookmarkedDiv = document.getElementById('bookmarkedQuestions');
+            const clearBtn = document.getElementById('clearBtn');
+           
+            allQuestionsDiv.innerHTML = questions.map((q, i) => `
+                <div class="question-item">
+                    <span class="question-text">${q.text}</span>
+                    <button class="btn btn-bookmark ${q.bookmarked ? 'bookmarked' : ''}" onclick="toggleBookmark(${i})">
+                        ${q.bookmarked ? '★ Bookmarked' : '★ Bookmark'}
+                    </button>
+                </div>
+            `).join('');
+
+
+            const bookmarkedQuestions = questions.filter(q => q.bookmarked);
+
+
+           
+           
+            if (bookmarkedQuestions.length === 0) {
+                bookmarkedDiv.innerHTML = `
+                    <div class="empty-state">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        <p>No bookmarks yet.<br>Click the bookmark button to save questions!</p>
+                    </div>
+                `;
+                clearBtn.style.display = 'none';
             } else {
-                const index = bookmarkedCards.indexOf(card);
-                if (index > -1) {
-                    bookmarkedCards.splice(index, 1);
-                }
+                bookmarkedDiv.innerHTML = questions
+                    .map((q, i) => q.bookmarked ? `
+                        <div class="question-item">
+                            <span class="question-text">${q.text}</span>
+                            <button class="btn btn-remove" onclick="removeBookmark(${i})">Remove</button>
+                        </div>
+                    ` : '')
+                    .join('');
+                clearBtn.style.display = 'block';
             }
+
+
+            document.getElementById('totalQuestions').textContent = questions.length;
+            document.getElementById('bookmarkedCount').textContent = bookmarkedQuestions.length;
         }
 
-        function updateBookmarksPage() {
-            const bookmarksContainer = document.getElementById('bookmarkedQuestions');
-            bookmarksContainer.innerHTML = '';
-            
-            if (bookmarkedCards.length === 0) {
-                bookmarksContainer.innerHTML = '<div class="quiz-card"><h2 style="text-align: center; color: #999;">No bookmarks yet!</h2><p style="text-align: center; margin-top: 10px;">Bookmark questions from the home page to see them here.</p></div>';
-            } else {
-                bookmarkedCards.forEach(card => {
-                    const clone = card.cloneNode(true);
-                    bookmarksContainer.appendChild(clone);
-                });
-            }
-        }
 
-        function toggleAnswer(btn) {
-            const answerContent = btn.nextElementSibling;
-            if (answerContent.style.display === 'none' || !answerContent.style.display) {
-                answerContent.style.display = 'block';
-                btn.textContent = 'Hide Answer';
-            } else {
-                answerContent.style.display = 'none';
-                btn.textContent = 'Show Answer';
+        document.getElementById('newQuestion').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                addQuestion();
             }
-        }
+        });
 
-        function toggleDarkMode(toggle) {
-            toggle.classList.toggle('active');
-            document.body.classList.toggle('dark-mode');
-        }
+
+        updateDisplay();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
