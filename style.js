@@ -113,6 +113,4 @@
             toggle.classList.toggle('active');
             document.body.classList.toggle('dark-mode');
         }
-    </script>
-</body>
-</html>
+  
