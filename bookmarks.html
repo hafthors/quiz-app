@@ -1,170 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
 
-/* Bookmarks Page CSS - Add to your styles.css or in a <style> tag */
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harry Potter Quiz - Bookmarks</title>
+    <!-- Assuming styles.css contains the necessary card and layout styling -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="java3.js" defer></script>
 
-/* ===== CARD STYLING ===== */
-.card {
-    position: relative;
-    background: white;
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
+</head>
 
-.card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transform: translateY(-2px);
-}
+<body class="app app--bookmarks">
 
-/* Card Question */
-.card__question {
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: #1f2937;
-    margin: 0 0 1rem 0;
-    padding-right: 3rem; /* Space for bookmark button */
-}
+    <header class="app-header">
+        <img src="Gemini_harrypotter.png" alt="Harry Potter" width="300" height="300">
+        <br>
 
-/* ===== ANSWER BUTTON STYLING ===== */
-.card__button-answer {
-    padding: 0.625rem 1.5rem;
-    margin: 1rem 0;
-    background-color: #4f46e5;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 0.9375rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
+        <h1>Bookmarked Questions</h1>
 
-.card__button-answer:hover {
-    background-color: #4338ca;
-    transform: translateY(-1px);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-}
 
-.card__button-answer:active {
-    transform: translateY(0);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
+    </header>
 
-/* ===== ANSWER DISPLAY ===== */
-.card__answer {
-    display: none;
-    margin: 1rem 0;
-    padding: 1rem;
-    background-color: #f0fdf4;
-    border-left: 4px solid #22c55e;
-    border-radius: 6px;
-    color: #166534;
-    font-weight: 500;
-    line-height: 1.5;
-}
+ 
 
-.card__answer--active {
-    display: block;
-    animation: slideDown 0.3s ease-out;
-}
+<div id="bookmarksPage" class="page">
+            <div class="bookmark-header">
+                <div class="bookmark-count" id="bookmarkCount">0</div>
+                <div class="bookmark-label">Saved Questions</div>
+            </div>
+            <div id="bookmarkedQuestions"></div>
+        </div>
 
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ===== TAG LIST STYLING ===== */
-.card__tag-list {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0 0 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.card__tag-list-item {
-    background-color: #f3f4f6;
-    color: #4b5563;
-    padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
-    font-size: 0.8125rem;
-    font-weight: 500;
-}
-
-/* ===== BOOKMARK BUTTON STYLING ===== */
-.card__button-bookmark {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-}
-
-.bookmark-toggle-button {
-    width: 40px;
-    height: 40px;
-    border: none;
-    background-color: #fef3c7;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.bookmark-toggle-button:hover {
-    background-color: #fde68a;
-    transform: scale(1.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-.bookmark-toggle-button:active {
-    transform: scale(0.95);
-}
-
-/* Bookmarked state */
-.bookmark-toggle-button.bookmarked-icon {
-    background-color: #fbbf24;
-}
-
-.bookmark-toggle-button.bookmarked-icon:hover {
-    background-color: #f59e0b;
-}
-
-/* Icon color filter for better visibility */
-.bookmark-toggle-button img {
-    filter: brightness(0.3);
-}
-
-.bookmark-toggle-button.bookmarked-icon img {
-    filter: brightness(1) invert(1);
-}
-
-/* ===== CARD LIST ITEM ANIMATION ===== */
-.card-list__item {
-    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-}
-
-/* ===== RESPONSIVE DESIGN ===== */
-@media (max-width: 640px) {
-    .card {
-        padding: 1.25rem;
-    }
-    
-    .card__question {
-        font-size: 1rem;
-    }
-    
-    .card__button-answer {
-        width: 100%;
-        padding: 0.75rem;
-    }
-}
+</body>
+</html>
