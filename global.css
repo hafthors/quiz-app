@@ -1,96 +1,69 @@
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+    }
 
-       /* Add these styles to your styles.css file */
+    .question-item {
+      display: none; /* Hidden until revealed */
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      width: 350px;
+      margin-top: 20px;
+      text-align: left;
+    }
 
-/* Hide answers by default */
-.card__answer {
-  display: none;
-  margin: 1rem 0;
-  padding: 1rem;
-  background-color: #f0f0f0;
-  border-radius: 8px;
-  border-left: 4px solid #4CAF50;
-}
+    .btn {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
 
-/* Show answer when active */
-.card__answer--active {
-  display: block;
-}
+    .btn:hover {
+      background-color: #0056b3;
+    }
 
-/* Answer button styling */
-.card__button-answer {
-  padding: 0.5rem 1.5rem;
-  margin: 1rem 0;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
-}
+    .btn-submit {
+      margin-top: 10px;
+      background-color: #28a745;
+    }
 
-.card__button-answer:hover {
-  background-color: #45a049;
-}
+    .btn-submit:hover {
+      background-color: #1e7e34;
+    }
 
-.card__button-answer:active {
-  transform: scale(0.98);
-}
+    .start-btn {
+      background-color: #6f42c1;
+      margin-bottom: 20px;
+    }
 
-/* Bookmark button styling */
-.bookmark {
-  width: 40px;
-  height: 40px;
-  background-color: transparent;
-  border: 2px solid #ddd;
-  border-radius: 50%;
-  cursor: pointer;
-  position: relative;
-  transition: all 0.3s ease;
-}
+    .start-btn:hover {
+      background-color: #563d7c;
+    }
 
-.bookmark::before {
-  content: "☆";
-  font-size: 1.5rem;
-  color: #666;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+    .option-label {
+      display: block;
+      margin-top: 8px;
+    }
 
-.bookmark:hover {
-  border-color: #FFD700;
-}
-
-.bookmark:hover::before {
-  color: #FFD700;
-}
-
-/* Active bookmark state */
-.bookmark--active {
-  background-color: #FFD700;
-  border-color: #FFD700;
-}
-
-.bookmark--active::before {
-  content: "★";
-  color: white;
-}
-
-/* Bookmark button container positioning */
-.card__button-bookmark {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-}
-
-/* Card positioning for bookmark */
-.card {
-  position: relative;
-  padding: 2rem;
-  margin: 1rem 0;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
+    #completion-message {
+      display: none;
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      margin-top: 30px;
+      width: 350px;
+    }
+  </style>
