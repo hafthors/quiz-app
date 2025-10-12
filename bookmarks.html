@@ -8,26 +8,29 @@
 
     <link rel="stylesheet" href="styles.css">
     <script src="style.js" defer></script>
-
 </head>
 
-<body class="app app--bookmarks">
+<body cz-shortcut-listen="true"> ==$0
+<div class="container">
+    <header id="pageTitle">Bookmarks</header>
 
-    <header class="app-header">
-        <img src="Gemini_harrypotter.png" alt="Harry Potter" width="300" height="300">
-        <br>
+    <div id="homePage" class="page"> </div>
+    <div class="quiz-card">
+    <span class="bookmark-icon active" onclick="toggleBookmark(this)
+        </span>
+        <div class="question">Question</div>
+        <div class="answer">Which magical creature guards the
+        entrance to the Gryffindor common room?</div>
+        <button class="show-answer-btn" onclick="toggleAnswer (this)">Show Answer</button>
+        <div class="answer-content">The Fat Lady</div>
+        <div class="tags"> </div>
+    </div>
+</div>
+        
 
-        <h1>Bookmarked Questions</h1>
-    </header>
 
- <div id="bookmarksPage" class="page">
-            <div class="bookmark-header">
-                <div class="bookmark-count" id="bookmarkCount">0</div>
-                <div class="bookmark-label">Saved Questions</div>
-            </div>
-            <div id="bookmarkedQuestions"></div>
-        </div>
-    
+
+        
  <footer class="footer-nav">
             <nav class="nav-container">
 
