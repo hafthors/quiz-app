@@ -4,31 +4,6 @@
        padding: 0;
        box-sizing: border-box;
 
-* {
-    & .tags {
-        display: flex;
-        margin-top: 15px;
-        gap: 10px;
-    }
-}
-<style>
-* {
-    box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
-}
-user agent stylesheet
-div {
-    display: block;
-    unicode-bidi: isolate;
-}
-<style>
-* {
-
-
-       
-
-
        
        body {
            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
